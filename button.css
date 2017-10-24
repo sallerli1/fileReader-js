@@ -1,0 +1,19 @@
+.button {
+    color: #000000;
+    text-decoration: none;
+    padding: 0 10% 0 10%;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover {
+    border: 1px solid #186f8f;
+    background-image: radial-gradient( #035FD8, #46B6F6);
+    box-shadow: inset 0px 1px 4px #035FD8,0px 4px 5px #035FD8;
+}
+
+.button:active {
+    border: 1px solid #186f8f;
+    background-image: radial-gradient( #035FD8 , #2280FC);
+    box-shadow: inset 0px 1px 20px #035FD8,0px 4px 5px #2280FC;
+}

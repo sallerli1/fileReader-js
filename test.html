@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="button.css" />
+        <script type="text/javascript" src="fileReader_oldstyle.js" ></script>
+    </head>
+    <body>
+        <form>
+            <input id="file" type="file" name="file_upload" multiple style="visibility:hidden" />
+        </form>
+        <a id="trigger" class="button">trigger</a>
+        <p id="text"></p>
+    </body>
+    <script>
+        var fileUpload = document.getElementById("file");
+        var trigger = document.getElementById("trigger");
+
+        fileUpload.onchange = function() {
+            var file = this.files,
+                len = file.length,
+                url = [];
+                reader = new fileReader();
+            for (var i=0; i<len; i++) {
+                document.body.insertBefore(reader.getProgressBar(),document.getElementById("text"));
+                var secquence = Promise.resolve();
+                secquence.then(
+                reader.readAsText(file[i],function(buffer) {
+                    document.getElementById("text").innerHTML+=(buffer+"<br/>");
+                },10));
+            }
+        }
+
+        trigger.onclick = function() {
+            fileUpload.click();
+        }
+    </script>
+</html>
