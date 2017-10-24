@@ -32,7 +32,7 @@
     //file: file to read; 
     //callback: function to process read data;
     //step: size of every patch of the divided file;
-    fileReader.prototype.readAsText = function(file, callback, step, encoding = "utf-8",) {
+    fileReader.prototype.readAsText = function(file, callback, step, encoding = "utf-8") {
         this.allProgress[++this.fileCount] = [];
         this.flag[this.fileCount] = [];
         this.loadedMap[this.fileCount] = [];
